@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= site.company %> | Anti-Gravity &amp; Cantilever Structural Engineering</title>
+  <meta name="description" content="<%= site.company %> designs and builds cantilever, anti-gravity, and modern structural architecture — floating forms engineered to defy expectation.">
+
+  <!-- Fonts: Space Grotesk (display, technical/geometric) + Inter (body) + JetBrains Mono (data/labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-mark" aria-hidden="true"></span>
+        <span class="nav__logo-text">Velusamy<span class="nav__logo-sub">Construction</span></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#specialties">Specialties</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#founder">Founder</a>
+        <a href="#trust">Credentials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__cta">
+        <a href="tel:<%= site.phone %>" class="btn btn--ghost nav__call">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <%= site.phoneDisplay %>
+        </a>
+        <a href="#contact" class="btn btn--primary">Get a Quote</a>
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="navMobile">
+      <a href="#specialties">Specialties</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#founder">Founder</a>
+      <a href="#trust">Credentials</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:<%= site.phone %>" class="btn btn--ghost"><%= site.phoneDisplay %></a>
+      <a href="#contact" class="btn btn--primary">Get a Quote</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <!-- Replace /public/videos/hero-ambient-blueprint.mp4 with your own ambient loop if desired -->
+      <video class="hero__video" autoplay loop muted playsinline poster="/images/hero-poster.jpg">
+        <source src="/videos/hero-ambient-blueprint.mp4" type="video/mp4">
+      </video>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <p class="eyebrow reveal">// STRUCTURAL ENGINEERING &mdash; ANTI-GRAVITY DIVISION</p>
+        <h1 class="hero__title reveal">
+          We engineer buildings that <span class="text-cyan">defy gravity</span>,
+          not the laws of safety.
+        </h1>
+        <p class="hero__sub reveal">
+          <%= site.company %> designs and constructs cantilever residences, floating
+          terraces, and high-rise structural retrofits — every unsupported span
+          certified, every load path proven.
+        </p>
+
+        <div class="hero__cta reveal">
+          <a href="#contact" class="btn btn--primary btn--lg">Start Your Project</a>
+          <a href="#portfolio" class="btn btn--ghost btn--lg">View Portfolio</a>
+        </div>
+
+        <dl class="hero__stats reveal">
+          <% site.stats.forEach(function(stat){ %>
+            <div class="hero__stat">
+              <dt class="hero__stat-value" data-counter data-target="<%= stat.value %>">0</dt>
+              <dd class="hero__stat-label"><%= stat.label %></dd>
+            </div>
+          <% }); %>
+        </dl>
+      </div>
+
+      <a href="#specialties" class="hero__scroll" aria-label="Scroll to specialties">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ SPECIALTIES GRID ============ -->
+    <section class="specialties" id="specialties">
+      <div class="container">
+        <p class="eyebrow reveal">// WHAT WE BUILD</p>
+        <h2 class="section-title reveal">Four disciplines. One structural language.</h2>
+
+        <div class="specialties__grid">
+          <article class="glass-card specialties__card reveal">
+            <div class="specialties__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20h18M5 20V9l7-5 7 5v11M9 20v-6h6v6"/></svg>
+            </div>
+            <h3>Floating Cantilevers</h3>
+            <p>Unsupported spans engineered with post-tensioned steel and precision load modeling — rooms that appear to hover over the landscape.</p>
+          </article>
+
+          <article class="glass-card specialties__card reveal">
+            <div class="specialties__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M6 21V7l6-4 6 4v14M9 21v-5h6v5M9 12h.01M15 12h.01M9 8h.01M15 8h.01"/></svg>
+            </div>
+            <h3>High-Rise Residential</h3>
+            <p>Vertical living engineered for density and daylight, with structural cores designed to carry future expansion.</p>
+          </article>
+
+          <article class="glass-card specialties__card reveal">
+            <div class="specialties__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Structural Retrofitting</h3>
+            <p>Seismic and load upgrades for aging structures — reinforced without disrupting the architecture people already love.</p>
+          </article>
+
+          <article class="glass-card specialties__card reveal">
+            <div class="specialties__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+            </div>
+            <h3>Custom Steel Framing</h3>
+            <p>Fabricated on our own drawings, fitted on site — steel geometry built specifically for each cantilever and curve.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIDEO SHOWCASE 1 : structural engineering / timelapse ============ -->
+    <section class="showcase" id="showcase-1">
+      <div class="container">
+        <p class="eyebrow reveal">// PROJECT TIMELAPSE</p>
+        <h2 class="section-title reveal">From foundation to cantilever, on record.</h2>
+        <p class="showcase__lede reveal">Every Velusamy build is documented stage by stage — foundation, framing, cantilever pour, and finish — so clients see exactly how their structure comes together.</p>
+
+        <div class="showcase__player glass-card reveal" data-video-player>
+          <!-- Replace /public/videos/showcase-structural-timelapse.mp4 with your own project timelapse -->
+          <video class="showcase__video" preload="metadata" poster="/images/portfolio-01-villa-twilight.jpg" playsinline>
+            <source src="/videos/showcase-structural-timelapse.mp4" type="video/mp4">
+          </video>
+          <button class="showcase__play" type="button" aria-label="Play structural timelapse video" data-video-toggle>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PORTFOLIO GALLERY ============ -->
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <p class="eyebrow reveal">// SELECTED WORK</p>
+        <h2 class="section-title reveal">Structures currently standing where physics said they shouldn't.</h2>
+
+        <div class="portfolio__grid">
+          <button class="portfolio__item reveal" type="button" data-lightbox-trigger data-full="/images/portfolio-01-villa-twilight.jpg" data-caption="Hillside Cantilever Villa — twilight elevation, glass balustrade deck">
+            <img src="/images/portfolio-01-villa-twilight.jpg" alt="Modern cantilevered villa overlooking a forested hillside at twilight" loading="lazy">
+            <span class="portfolio__caption">Hillside Cantilever Villa</span>
+          </button>
+
+          <button class="portfolio__item reveal" type="button" data-lightbox-trigger data-full="/images/portfolio-02-living-room.jpg" data-caption="Travertine Fireplace Residence — double-height structural core">
+            <img src="/images/portfolio-02-living-room.jpg" alt="Double height living room with travertine fireplace and open staircase" loading="lazy">
+            <span class="portfolio__caption">Travertine Fireplace Residence</span>
+          </button>
+
+          <button class="portfolio__item reveal" type="button" data-lightbox-trigger data-full="/images/portfolio-03-kitchen.jpg" data-caption="Marble Waterfall Kitchen — cantilevered island slab">
+            <img src="/images/portfolio-03-kitchen.jpg" alt="Modern kitchen with marble waterfall island and brass range hood" loading="lazy">
+            <span class="portfolio__caption">Marble Waterfall Kitchen</span>
+          </button>
+
+          <!-- PLACEHOLDER: swap this block for a 4th real project photo (data-full + img src) -->
+          <button class="portfolio__item portfolio__item--placeholder reveal" type="button" data-lightbox-trigger data-full="/images/portfolio-01-villa-twilight.jpg" data-caption="Your next project, engineered by Velusamy Construction">
+            <div class="portfolio__placeholder-fill">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+              <span>Add project image</span>
+            </div>
+            <span class="portfolio__caption">Your Project, Here Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox modal -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project image viewer">
+      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close image viewer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <figure class="lightbox__figure">
+        <img src="" alt="" id="lightboxImage">
+        <figcaption id="lightboxCaption"></figcaption>
+      </figure>
+    </div>
+
+    <!-- ============ FOUNDER SECTION ============ -->
+    <section class="founder" id="founder">
+      <div class="container founder__inner">
+        <div class="founder__portrait reveal">
+          <!-- PLACEHOLDER: replace with a real portrait of Velusamy at /public/images/founder-portrait.jpg -->
+          <div class="founder__portrait-fill">
+            <span>V</span>
+          </div>
+          <div class="founder__portrait-glow" aria-hidden="true"></div>
+        </div>
+
+        <div class="founder__content reveal">
+          <p class="eyebrow">// FOUNDER &amp; PRINCIPAL ENGINEER</p>
+          <h2 class="section-title">Velusamy</h2>
+          <blockquote class="founder__quote">
+            &ldquo;A cantilever isn't a trick of design — it's a promise to the people who'll stand on it.
+            We don't build what we can't certify.&rdquo;
+          </blockquote>
+          <p class="founder__bio">
+            Velusamy founded <%= site.company %> to bring genuine structural
+            rigor to architecture that looks impossible. Every floating form that
+            leaves our studio has been load-tested, peer-reviewed, and signed off
+            before a single beam is poured — because ambition and safety are
+            engineered together, not traded off.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIDEO SHOWCASE 2 : client / process ============ -->
+    <section class="showcase showcase--alt" id="showcase-2">
+      <div class="container">
+        <p class="eyebrow reveal">// CLIENT PROCESS</p>
+        <h2 class="section-title reveal">What it's like to build with us.</h2>
+        <p class="showcase__lede reveal">
+          <!-- PLACEHOLDER: this player currently reuses the ambient blueprint clip. Replace /public/videos/showcase-process-testimonial.mp4 with a real client testimonial or process walkthrough. -->
+          Hear directly from clients on what the design, engineering, and build process looked like from their side.
+        </p>
+
+        <div class="showcase__player glass-card reveal" data-video-player>
+          <video class="showcase__video" preload="metadata" poster="/images/portfolio-02-living-room.jpg" playsinline>
+            <source src="/videos/showcase-process-testimonial.mp4" type="video/mp4">
+          </video>
+          <button class="showcase__play" type="button" aria-label="Play client process video" data-video-toggle>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST INDICATORS ============ -->
+    <section class="trust" id="trust">
+      <div class="container">
+        <p class="eyebrow reveal">// CREDENTIALS</p>
+        <h2 class="section-title reveal">Certified, licensed, and load-tested.</h2>
+
+        <div class="trust__grid">
+          <div class="glass-card trust__card reveal">
+            <span class="trust__badge">ISO 9001:2015</span>
+            <p>Quality management systems certified</p>
+          </div>
+          <div class="glass-card trust__card reveal">
+            <span class="trust__badge">ISO 45001</span>
+            <p>Occupational health &amp; site safety certified</p>
+          </div>
+          <div class="glass-card trust__card reveal">
+            <span class="trust__badge">Licensed Contractor</span>
+            <p>Structural engineering license verified on request</p>
+          </div>
+          <div class="glass-card trust__card reveal">
+            <span class="trust__badge">98% Client Satisfaction</span>
+            <p>Post-handover survey average across delivered projects</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT & SOCIAL ============ -->
+    <section class="contact" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__intro reveal">
+          <p class="eyebrow">// START A PROJECT</p>
+          <h2 class="section-title">Tell us what you want to build.</h2>
+          <p>Call, email, or send a message below — we typically respond within one business day.</p>
+
+          <div class="contact__cards">
+            <a href="tel:<%= site.phone %>" class="glass-card contact__card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div><span>Call us</span><strong><%= site.phoneDisplay %></strong></div>
+            </a>
+            <a href="mailto:<%= site.email %>" class="glass-card contact__card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+              <div><span>Email us</span><strong><%= site.email %></strong></div>
+            </a>
+            <a href="<%= site.instagramUrl %>" target="_blank" rel="noopener noreferrer" class="glass-card contact__card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+              <div><span>Follow along</span><strong>@<%= site.instagramHandle %></strong></div>
+            </a>
+          </div>
+        </div>
+
+        <form class="glass-card contact__form reveal" id="contactForm" novalidate>
+          <div class="form__row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="form__row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form__row">
+            <label for="phone">Phone <span class="form__optional">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form__row">
+            <label for="message">Tell us about your project</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg form__submit">
+            <span class="form__submit-label">Send Enquiry</span>
+          </button>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="nav__logo">
+          <span class="nav__logo-mark" aria-hidden="true"></span>
+          <span class="nav__logo-text">Velusamy<span class="nav__logo-sub">Construction</span></span>
+        </a>
+        <p>Anti-gravity, cantilever &amp; modern structural architecture.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Site</h4>
+        <a href="#specialties">Specialties</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#founder">Founder</a>
+        <a href="#trust">Credentials</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="tel:<%= site.phone %>"><%= site.phoneDisplay %></a>
+        <a href="mailto:<%= site.email %>"><%= site.email %></a>
+        <a href="<%= site.instagramUrl %>" target="_blank" rel="noopener noreferrer">@<%= site.instagramHandle %></a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>&copy; <span id="year"><%= site.year %></span> <%= site.company %>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
